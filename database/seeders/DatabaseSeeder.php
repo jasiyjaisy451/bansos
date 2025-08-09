@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@bansos.com',
             'password' => Hash::make('4dm1n!2025'),
+            'role' => 'admin',
         ]);
 
 
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Operator',
             'email' => 'operator@bansos.com',
             'password' => Hash::make('Op3r@t0r!2025'),
+            'role' => 'admin',
         ]);
 
         // Buat 10 data penerima

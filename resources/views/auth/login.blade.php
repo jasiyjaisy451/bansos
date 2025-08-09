@@ -7,7 +7,11 @@
             <div class="card shadow-lg border-0">
                 <div class="card-body p-5">
                     <div class="text-center mb-4">
-                        <img src="https://akiradata.co.id/wp-content/uploads/2020/05/logo-pertamina.png" alt="Logo Pertamina" style="height: 80px;" class="mb-3">
+                        <div class="d-flex justify-content-center align-items-center mb-3">
+                            <img src="https://bazma.id/wp-content/uploads/2023/05/logo-bazma-1.png" alt="Logo Bazma" style="height: 60px;" class="me-3">
+                            <span class="fw-bold fs-4">X</span>
+                            <img src="https://akiradata.co.id/wp-content/uploads/2020/05/logo-pertamina.png" alt="Logo Pertamina" style="height: 60px;" class="ms-3">
+                        </div>
                         <h3 class="fw-bold text-primary">Sistem Bansos Pendidikan</h3>
                         <p class="text-muted">Masuk ke sistem administrasi</p>
                     </div>
@@ -52,6 +56,12 @@
                             <button type="submit" class="btn btn-primary btn-lg">
                                 {{ __('Login') }}
                             </button>
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <p class="mb-0">Belum punya akun? 
+                                <a href="{{ route('register') }}" class="text-decoration-none">Daftar sebagai penerima</a>
+                            </p>
                         </div>
 
                         @if (Route::has('password.request'))

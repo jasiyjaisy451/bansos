@@ -44,6 +44,24 @@
             transform: translateX(6px);
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .logo-container img {
+            height: 40px;
+        }
+
+        .logo-separator {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+        }
+
         .card {
             border: none;
             border-radius: 12px;
@@ -93,23 +111,37 @@
         <!-- Sidebar -->
         <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
             <div class="position-sticky pt-3 text-center sidebar-header">
-                <img src="https://akiradata.co.id/wp-content/uploads/2020/05/logo-pertamina.png" alt="Logo Pertamina" class="logo-pertamina">
+                <div class="logo-container">
+                    <img src="https://bazma.id/wp-content/uploads/2023/05/logo-bazma-1.png" alt="Logo Bazma" class="bg-white rounded px-2 py-1">
+                    <span class="logo-separator">×</span>
+                    <img src="https://akiradata.co.id/wp-content/uploads/2020/05/logo-pertamina.png" alt="Logo Pertamina">
+                </div>
                 <h5>Sistem Bansos</h5>
                 <h5>Pendidikan</h5>
                 <hr class="border-light">
                 <ul class="nav flex-column text-start px-3">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                        <a class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
                             <i class="fas fa-tachometer-alt me-2"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('recipients.*') ? 'active' : '' }}" href="{{ route('recipients.index') }}">
+                        <a class="nav-link {{ request()->routeIs('admin.recipients.*') ? 'active' : '' }}" href="{{ route('admin.recipients.index') }}">
                             <i class="fas fa-users me-2"></i> Data Penerima
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('recipients.scan') ? 'active' : '' }}" href="{{ route('recipients.scan') }}">
+                        <a class="nav-link {{ request()->routeIs('admin.import') ? 'active' : '' }}" href="{{ route('admin.import') }}">
+                            <i class="fas fa-file-excel me-2"></i> Import Excel
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('admin.scan-register') ? 'active' : '' }}" href="{{ route('admin.scan-register') }}">
+                            <i class="fas fa-user-check me-2"></i> Register QR
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('admin.recipients.scan') ? 'active' : '' }}" href="{{ route('admin.recipients.scan') }}">
                             <i class="fas fa-qrcode me-2"></i> Scan QR Code
                         </a>
                     </li>
